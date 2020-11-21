@@ -1,13 +1,22 @@
 import React from 'react';
-import axios from "axios";
+import "./Card.css";
 
-class Card extends React.Component {
+// const divStyle = {
+//     color: 'blue',
+//     backgroundImage: 'url(' + imgUrl + ')',
+//   };
+const Card = React.memo(({cardImg}) => {
 
-    render() {
-        return (
-            <img src={this.props.cardImg} />
-        )
-    }
-}
+    const rotate = {
+        transform: `rotate(${Math.floor(Math.random() * 30)}deg)`
+      };
+
+    return (
+            <img style={rotate} className="background" src={cardImg} alt ="card"/>
+    )
+    
+})
 
 export default Card;
+
+
